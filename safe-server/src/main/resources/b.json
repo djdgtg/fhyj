@@ -1,0 +1,53 @@
+{
+  "msg": "操作成功",
+  "code": 200,
+  "data": {
+    "groupPersonel": [
+      "288"
+    ],
+    "indoorGuard": [
+      "288"
+    ],
+    "orderNo": "",
+    "outdoorGuard": [
+      "288"
+    ],
+    "planTime": "2023-03-06 00:00:00",
+    "problemAll": null,
+    "skylightType": "1",
+    "stationInfoId": 101001001001,
+    "stationLiaison": [
+      "288"
+    ],
+    "stationName": "",
+    "status": "",
+    "testFormAll": null,
+    "toolAdmin": [
+      "288"
+    ],
+    "workArea": "",
+    "workAreaAndStation": "101001001",
+    "workAreaManager": [
+      "288"
+    ],
+    "workInfoReqs": [
+      {
+        "data6": [],
+        "majorInfoId": "7",
+        "workId": 578,
+        "workLocation": "1",
+        "workProjectId": "2",
+        "workTime": [
+          "03:00",
+          "15:00"
+        ],
+        "workTypeId": "1"
+      }
+    ],
+    "workManager": [
+      "288"
+    ],
+    "workProjectName": "",
+    "workTypeName": ""
+  }
+}

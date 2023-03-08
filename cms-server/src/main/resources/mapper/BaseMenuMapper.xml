@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fhyj.cms.mapper.BaseMenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.fhyj.cms.bean.MenuCustomBean">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="parentMenuName" column="parent_name" jdbcType="VARCHAR"/>
+        <result property="path" column="path" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+        <result property="isOutLink" column="is_out_link" jdbcType="BIT"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,parent_id,
+        path,description,sort,
+        is_out_link
+    </sql>
+
+    <select id="getRolesMenus" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select m.*
+        from base_menu m
+        where m.id in (select r.menu_id
+                       from base_role_menu r
+                       where r.role_id in (select mr.role_id
+                                           from base_manager_role mr
+                                           where mr.user_id = #{userId,jdbcType=INTEGER}))
+        order by m.sort
+    </select>
+
+    <select id="getMenusStringList" resultType="java.lang.String">
+        SELECT substring_index(CONCAT(#{contextPath}, bm.path), '?', 1)
+        FROM base_menu bm
+    </select>
+
+    <select id="getMenusStringListByUserId" resultType="java.lang.String">
+        select substring_index(concat(#{contextPath}, bm.path), '?', 1)
+        from base_role_menu brm
+                 left join base_role br on br.id = brm.role_id
+                 left join base_menu bm on bm.id = brm.menu_id
+                 left join base_manager_role bmr on brm.role_id = bmr.role_id
+                 left join base_manager bmg on bmg.id = bmr.user_id
+        where bmg.id = #{id}
+    </select>
+</mapper>

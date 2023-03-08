@@ -1,0 +1,30 @@
+server:
+  port: 8089
+
+spring:
+  #视图解析层
+  freemarker:
+    suffix: .ftl
+  profiles:
+    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: hfyj-cms
+  cloud:
+    consul:
+      host: localhost
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+
+logging:
+  level:
+    com.fhyj.cms.mapper : debug
+
+jasypt:
+  encryptor:
+    password: fhyj@2023
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator

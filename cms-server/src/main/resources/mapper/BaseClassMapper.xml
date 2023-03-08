@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fhyj.cms.mapper.BaseClassMapper">
+
+    <resultMap id="BaseResultMap" type="com.fhyj.cms.bean.ClassCustomBean">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="parentId" column="parent_id" jdbcType="INTEGER"/>
+        <result property="parentName" column="parent_name" jdbcType="VARCHAR"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="imgUrl" column="img_url" jdbcType="VARCHAR"/>
+        <result property="description" column="description" jdbcType="VARCHAR"/>
+        <result property="sort" column="sort" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,parent_id,name,
+        img_url,description,sort
+    </sql>
+
+    <select id="listCustom" resultMap="BaseResultMap">
+        select c.*,p.name parent_name from base_class c left join base_class p on p.id = c.parnet_id
+    </select>
+
+    <select id="checkUniqueness" resultType="java.lang.Integer">
+        select count(id) from base_class
+        <where>
+            <if test="id != null">
+                and id != #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="parentId != null and parentId != ''">
+                and parent_id = #{parentId}
+            </if>
+        </where>
+    </select>
+</mapper>

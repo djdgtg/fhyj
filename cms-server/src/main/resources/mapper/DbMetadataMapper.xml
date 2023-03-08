@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fhyj.cms.mapper.DbMetadataMapper">
+
+    <resultMap id="BaseResultMap" type="com.fhyj.cms.entity.DbMetadata">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="columnName" column="column_name" jdbcType="VARCHAR"/>
+            <result property="columnChName" column="column_ch_name" jdbcType="VARCHAR"/>
+            <result property="columnType" column="column_type" jdbcType="INTEGER"/>
+            <result property="columnSource" column="column_source" jdbcType="INTEGER"/>
+            <result property="columnTypeRule" column="column_type_rule" jdbcType="VARCHAR"/>
+            <result property="columnLength" column="column_length" jdbcType="INTEGER"/>
+            <result property="dataType" column="data_type" jdbcType="VARCHAR"/>
+            <result property="formShow" column="form_show" jdbcType="INTEGER"/>
+            <result property="gridShow" column="grid_show" jdbcType="INTEGER"/>
+            <result property="searchShow" column="search_show" jdbcType="INTEGER"/>
+            <result property="importExportShow" column="import_export_show" jdbcType="INTEGER"/>
+            <result property="sorts" column="sorts" jdbcType="INTEGER"/>
+            <result property="mouldId" column="mould_id" jdbcType="INTEGER"/>
+            <result property="defaultValue" column="default_value" jdbcType="VARCHAR"/>
+            <result property="required" column="required" jdbcType="INTEGER"/>
+            <result property="editable" column="editable" jdbcType="INTEGER"/>
+            <result property="only" column="Only" jdbcType="INTEGER"/>
+            <result property="validexp" column="ValidExp" jdbcType="VARCHAR"/>
+            <result property="validmsg" column="ValidMsg" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,column_name,column_ch_name,
+        column_type,column_source,column_type_rule,
+        column_length,data_type,form_show,
+        grid_show,search_show,import_export_show,
+        sorts,mould_id,default_value,
+        required,editable,Only,
+        ValidExp,ValidMsg
+    </sql>
+    <select id="getMetadataCustomBean" resultType="com.fhyj.cms.bean.MetadataCustomBean"></select>
+</mapper>

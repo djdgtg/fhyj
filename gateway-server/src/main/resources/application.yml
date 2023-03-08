@@ -1,0 +1,59 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.security: INFO
+    org.springframework.security.oauth2: INFO
+#    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  application:
+    name: fhyj-gateway
+  cloud:
+    gateway:
+      routes: #配置路由路径
+        - id: fhyj-safe
+          uri: lb://fhyj-safe
+          predicates:
+            - Path=/safe/**
+          filters:
+            - StripPrefix=1
+        - id: fhyj-soa
+          uri: lb://soa
+          predicates:
+            - Path=/soa/**
+          filters:
+            - StripPrefix=1
+  security:
+    oauth2:
+      client:
+        registration:
+          safe-client-oidc:
+            provider: spring
+            client-id: safe-client
+            client-secret: 123456
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/login/oauth2/code/{registrationId}"
+            scope: openid, profile
+            client-name: safe-client-oidc
+          safe-client-authorization-code:
+            provider: spring
+            client-id: safe-client
+            client-secret: 123456
+            authorization-grant-type: authorization_code
+            redirect-uri: "http://127.0.0.1:8080/authorized"
+            scope: safe.read,safe.write
+            client-name: safe-client-authorization-code
+          safe-client-client-credentials:
+            provider: spring
+            client-id: safe-client
+            client-secret: 123456
+            authorization-grant-type: client_credentials
+            scope: safe.read,safe.write
+            client-name: safe-client-client-credentials
+        provider:
+          spring:
+            issuer-uri: http://localhost:9000

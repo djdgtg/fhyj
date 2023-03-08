@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/authorization-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/authorization-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/cms-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/base/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/easyexcel/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/easyexcel/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/minio/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/minio/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/mybatis-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/mybatis-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/gateway-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/safe-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/safe-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soa-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/soa-server/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>

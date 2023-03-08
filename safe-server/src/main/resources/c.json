@@ -1,0 +1,22 @@
+{
+  "data6": [
+    {
+      "deviceName": "test0306",
+      "deviceTypeId": "116003",
+      "extendDeviceTypeId": "",
+      "id": 125613,
+      "modelNumber": "",
+      "problemInfoId": "",
+      "testFormId": ""
+    }
+  ],
+  "majorInfoId": "7",
+  "workId": 571,
+  "workLocation": "1",
+  "workProjectId": "2",
+  "workTime": [
+    "03:00",
+    "15:00"
+  ],
+  "workTypeId": "1"
+}

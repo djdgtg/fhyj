@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fhyj.cms.mapper.DbTableNexusMapper">
+
+    <resultMap id="BaseResultMap" type="com.fhyj.cms.entity.DbTableNexus">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="nexusTable" column="nexus_table" jdbcType="VARCHAR"/>
+        <result property="nexusField" column="nexus_field" jdbcType="VARCHAR"/>
+        <result property="nexusFromTable" column="nexus_from_table" jdbcType="VARCHAR"/>
+        <result property="nexusFromField" column="nexus_from_field" jdbcType="VARCHAR"/>
+        <result property="nexusFromValueField" column="nexus_from_value_field" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,nexus_table,nexus_field,
+        nexus_from_table,nexus_from_field,nexus_from_value_field
+    </sql>
+    <select id="getResList" resultType="java.util.LinkedHashMap"></select>
+</mapper>
