@@ -39,7 +39,7 @@
 
     <!--DataTables Sample [ PORTAL ]-->
     <script src="static/js/comm.js"></script>
-    <script src="static/js/sysmanage/managers.js"></script>
+    <script src="static/js/sysmanage/manager.js"></script>
 </head>
 <body>
 <div id="wrapper">

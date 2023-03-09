@@ -114,7 +114,7 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div id="mainnavDiv"></div>
+                            <div id="mainDiv"></div>
                         </div>
                     </div>
                 </div>

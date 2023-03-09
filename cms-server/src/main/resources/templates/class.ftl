@@ -33,7 +33,7 @@
     <script src="static/plugins/bootbox/bootbox.min.js"></script>
     <!--DataTables Sample [ PORTAL ]-->
     <script src="static/js/comm.js"></script>
-    <script src="static/js/sysmanage/classes.js"></script>
+    <script src="static/js/sysmanage/class.js"></script>
     <script src="static/js/pageextend.js"></script>
 </head>
 <body>

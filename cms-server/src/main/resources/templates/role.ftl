@@ -31,7 +31,7 @@
 
     <!--DataTables Sample [ PORTAL ]-->
     <script src="static/js/comm.js"></script>
-    <script src="static/js/sysmanage/roles.js"></script>
+    <script src="static/js/sysmanage/role.js"></script>
 </head>
 <body>
 <!--Page Title-->

@@ -53,9 +53,9 @@ public class PersonalController {
     }
 
 
-    @RequestMapping("/checkunique")
+    @RequestMapping("/checkUnique")
     @ResponseBody
-    public String checkunique(String columnName, Integer id, Integer index, QueryList queryList, String tableName) {
+    public String checkUnique(String columnName, Integer id, Integer index, QueryList queryList, String tableName) {
         String value = queryList.getQueryList().get(index).getNameValue();
         boolean result = personalService.checkUnique(columnName, value, id, tableName);
         HashMap<String, Object> map = new HashMap<>();

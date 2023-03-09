@@ -34,7 +34,7 @@
     <script src="../static/plugins/bootstrap-treeview/bootstrap-treeview.js"></script>
     <!--DataTables Sample [ PORTAL ]-->
     <script src="../static/js/comm.js"></script>
-    <script src="../static/js/resourcemanage/moulds.js"></script>
+    <script src="../static/js/resourcemanage/mould.js"></script>
 </head>
 <body>
 <!--Page Title-->

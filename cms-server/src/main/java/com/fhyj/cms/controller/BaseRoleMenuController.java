@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/rolemenu")
+@RequestMapping("/role/menu")
 public class BaseRoleMenuController {
 
     @Autowired

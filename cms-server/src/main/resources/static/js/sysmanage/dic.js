@@ -25,7 +25,7 @@ $(window).on('load', function () {
 function loadDicType() {
     $("#dicTypeSelect").children().remove();
     $.ajax({
-        url: "dics/list",
+        url: "dic/list",
         dataType: "json",
         data: {"isDicType": 1},
         success: function (data) {
@@ -54,9 +54,9 @@ function loadDic() {
     oTable = $("#dicTb").bootstrapTable({
         method: "post",  //使用get请求到服务器获取数据
         contentType: "application/x-www-form-urlencoded",
-        url: "dics/list", //获取数据的Servlet地址   
+        url: "dic/list", //获取数据的Servlet地址
         queryParams: function () {
-            return {'isDicType': 0, 'type': $('#typeSelect').val()};
+            return {'isDicType': 0, 'type': $('#dicTypeSelect').val()};
         },
         striped: true,  //表格显示条纹  
         pagination: true, //启动分页  
@@ -99,7 +99,7 @@ function loadDic() {
  */
 function dicTypeModal() {
     clearFormData("#addDicTypeForm");
-    $("#dicTypeIsDicType").val(1);
+    $("#isDicType").val(1);
     $("#addDicTypeModal").modal('show');
 }
 
@@ -119,7 +119,6 @@ function dicModal(opType) {
             var dicId = selDic[0].id;
             var dicValue = selDic[0].value;
             var dicName = selDic[0].name;
-            var dicType = selDic[0].type;
 
             $("#name").val(dicName);
             $("#value").val(dicValue);
@@ -183,7 +182,7 @@ function validDicTypeForm() {
         var bv = $form.data('bootstrapValidator');
 
         // Use Ajax to submit form data
-        addDics("#addDicTypeForm", "#addDicTypeModal");
+        addDic("#addDicTypeForm", "#addDicTypeModal");
     });
 }
 
@@ -236,17 +235,17 @@ function validDicForm() {
         if (opType === 1) {
             updateDicMsg();
         } else {
-            addDics("#addDicForm", "#addDicModal");
+            addDic("#addDicForm", "#addDicModal");
         }
     });
 }
 
 
 //添加字典及字典类型
-function addDics(formId, modalId) {
+function addDic(formId, modalId) {
     $.ajax({
         type: "POST",
-        url: "dics/add",
+        url: "dic/add",
         data: $(formId).serialize(),
         success: function (data) {
             if (data.status === 200) {
@@ -274,7 +273,7 @@ function addDics(formId, modalId) {
 function updateDicMsg() {
     $.ajax({
         type: "POST",
-        url: "dics/update",
+        url: "dic/update",
         data: $("#addDicForm").serialize(),
         success: function (data) {
             if (data.status === 200) {
@@ -301,7 +300,7 @@ function delDicTypeBtn() {
     var dicType = $("#dicTypeSelect").val();
     $.ajax({
         type: "POST",
-        url: "dics/del",
+        url: "dic/del",
         data: "type=" + dicType + "&isDicType=1",
         success: function (data) {
             if (data.status === 200) {
@@ -321,7 +320,7 @@ function delDicTypeBtn() {
 
 
 //删除
-function delDics() {
+function delDic() {
     var selDic = $("#dicTb").bootstrapTable('getSelections');
     if (selDic.length == 0) {
         bootbox.alert('至少选择一个字典！', function () {
@@ -339,7 +338,7 @@ function delDics() {
             if (result) {
                 $.ajax({
                     type: "POST",
-                    url: "dics/delBatch",
+                    url: "dic/delBatch",
                     data: "dicIds=" + dicIds,
                     success: function (data) {
                         if (data.status === 200) {

@@ -30,7 +30,7 @@
 
     <!--DataTables Sample [ PORTAL ]-->
     <script src="../static/js/comm.js"></script>
-    <script src="../static/js/resourcemanage/datalibrarys.js"></script>
+    <script src="../static/js/resourcemanage/table.js"></script>
 </head>
 <body>
 <!--Page Title-->

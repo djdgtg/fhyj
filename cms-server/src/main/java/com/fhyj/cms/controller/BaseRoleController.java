@@ -21,7 +21,7 @@ import java.util.List;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/roles")
+@RequestMapping("/role")
 public class BaseRoleController {
 
     @Autowired

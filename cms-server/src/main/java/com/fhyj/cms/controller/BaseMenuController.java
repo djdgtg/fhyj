@@ -20,7 +20,7 @@ import javax.servlet.http.HttpServletRequest;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/menus")
+@RequestMapping("/menu")
 public class BaseMenuController {
 
     @Autowired

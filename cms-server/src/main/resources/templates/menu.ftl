@@ -34,7 +34,7 @@
     <script src="static/plugins/bootstrap-select/bootstrap-select.min.js"></script>
 
     <!--DataTables Sample [ PORTAL ]-->
-    <script src="static/js/sysmanage/menus.js"></script>
+    <script src="static/js/sysmanage/menu.js"></script>
     <script src="static/js/pageextend.js"></script>
 </head>
 <body>

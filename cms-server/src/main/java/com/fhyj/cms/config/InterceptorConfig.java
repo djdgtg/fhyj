@@ -33,7 +33,7 @@ public class InterceptorConfig extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(getTokenInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/login", "/checkLogin", "/static/**");
+                .excludePathPatterns("/login", "/manager/checkLogin", "/static/**");
         super.addInterceptors(registry);
     }
 

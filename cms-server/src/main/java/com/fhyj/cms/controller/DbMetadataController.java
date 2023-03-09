@@ -24,7 +24,7 @@ import java.util.List;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/metadatas")
+@RequestMapping("/metadata")
 public class DbMetadataController {
 
     @Autowired

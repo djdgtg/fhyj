@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/classes")
+@RequestMapping("/class")
 public class BaseClassController {
 
     @Autowired

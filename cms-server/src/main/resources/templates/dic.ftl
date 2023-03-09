@@ -33,7 +33,7 @@
 
     <!--DataTables Sample [ PORTAL ]-->
     <script src="static/js/comm.js"></script>
-    <script src="static/js/sysmanage/dics.js"></script>
+    <script src="static/js/sysmanage/dic.js"></script>
 </head>
 <body>
 <!--Page Title-->
@@ -64,8 +64,8 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button onclick="dicModal(0)" class="btn btn-primary"><i class="icon-plus"></i> 新增字典</button>
                 <button class="btn btn-mint" onclick="dicModal(1)"><i class="icon-edit"></i> 修改字典</button>
-                <button class="btn btn-danger" onclick="delDics()"><i class="icon-remove"></i> 删除字典</button>
-                <input type="hidden" id="optype">
+                <button class="btn btn-danger" onclick="delDic()"><i class="icon-remove"></i> 删除字典</button>
+                <input type="hidden" id="opType">
             </div>
         </div>
         <div class="panel-body">
@@ -98,7 +98,7 @@
                     <div class="form-group">
                         <label class="col-lg-3 control-label">字典类型中文名：</label>
                         <div class="col-lg-7">
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="typeName">
                             <input type="hidden" value="1" name="isDicType" id="isDicType"/>
                         </div>
                     </div>

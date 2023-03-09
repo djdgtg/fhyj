@@ -29,7 +29,7 @@
 
     <!--DataTables Sample [ SAMPLE ]-->
     <script src="static/js/comm.js"></script>
-    <script src="static/js/sysmanage/syslogs.js"></script>
+    <script src="static/js/sysmanage/log.js"></script>
 </head>
 <body>
 <!--Page Title-->

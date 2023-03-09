@@ -24,11 +24,10 @@
                 url: "/manager/loadLoginUser",
                 success: function (data) {
                     if (data != null) {
-                        if (data.lastlogintime != null) {
-                            var date = new Date(data.lastlogintime);
+                        if (data.lastLoginTime != null) {
+                            var date = new Date(data.lastLoginTime);
                             $("#loginUserLoginTime")[0].innerText = date.Format("yyyy-MM-dd hh:mm:ss");
-                        }
-                        else {
+                        } else {
                             $("#loginUserLoginTime")[0].innerText = '欢迎，您是首次登陆';
                         }
                     }

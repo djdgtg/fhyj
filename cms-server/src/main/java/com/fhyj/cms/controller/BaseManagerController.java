@@ -38,7 +38,7 @@ public class BaseManagerController {
     @Autowired
     private BaseLogService logService;
 
-    @PostMapping("checklogin")
+    @PostMapping("checkLogin")
     @ResponseBody
     public ActionResult login(BaseManager baseManager, HttpServletRequest request) {
         BaseManager result = managerService.login(baseManager);
@@ -77,32 +77,17 @@ public class BaseManagerController {
     @RequestMapping("/add")
     @ResponseBody
     public ActionResult add(ManagerCustomBean managers, HttpServletRequest request) {
-        if (managerService.checkUniqueness(managers)) {
+        if (getManager(managers, request)) {
             return ActionResult.build(400, "该管理员已存在,请输入其他管理员用户名!");
         }
-        if (!StringUtils.hasLength(managers.getPassword())) {
-            managers.setPassword("689EE787E0EA220E6D5A72163EB8C437");//默认123456
-        } else {
-            managers.setPassword(MD5Util.MD5ToDepth(managers.getPassword()));
-        }
-        Date now = new Date();
-        managers.setCreateTime(now);
-        managers.setModifyTime(now);
-        BaseManager loginUser = (BaseManager) request.getSession().getAttribute("USER_VALUE_OBJECT");
-
-        managers.setCreator(loginUser.getId());
-        managers.setModifier(loginUser.getId());
-        managers.setStatus(1);
         boolean save = managerService.save(managers);
         return getActionResult(managers, save);
 
     }
 
-    @RequestMapping("/update")
-    @ResponseBody
-    public ActionResult update(ManagerCustomBean managers, HttpServletRequest request) {
+    private boolean getManager(ManagerCustomBean managers, HttpServletRequest request) {
         if (managerService.checkUniqueness(managers)) {
-            return ActionResult.build(400, "该管理员已存在,请输入其他管理员用户名!");
+            return true;
         }
         if (!StringUtils.hasLength(managers.getPassword())) {
             managers.setPassword("689EE787E0EA220E6D5A72163EB8C437");//默认123456
@@ -113,9 +98,19 @@ public class BaseManagerController {
         managers.setCreateTime(now);
         managers.setModifyTime(now);
         BaseManager loginUser = (BaseManager) request.getSession().getAttribute("USER_VALUE_OBJECT");
+
         managers.setCreator(loginUser.getId());
         managers.setModifier(loginUser.getId());
         managers.setStatus(1);
+        return false;
+    }
+
+    @RequestMapping("/update")
+    @ResponseBody
+    public ActionResult update(ManagerCustomBean managers, HttpServletRequest request) {
+        if (getManager(managers, request)) {
+            return ActionResult.build(400, "该管理员已存在,请输入其他管理员用户名!");
+        }
         boolean update = managerService.updateById(managers);
         return getActionResult(managers, update);
     }

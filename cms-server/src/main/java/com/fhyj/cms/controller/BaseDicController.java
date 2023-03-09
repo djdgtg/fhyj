@@ -19,7 +19,7 @@ import java.util.List;
  * @date 2018/12/11
  */
 @Controller
-@RequestMapping("/dics")
+@RequestMapping("/dic")
 public class BaseDicController {
 
     @Autowired
